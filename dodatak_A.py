@@ -8,7 +8,7 @@ class OperationsManager():
 
     def perform_division(self) -> float:
         """Divides a with b. If b is zero, returns NaN."""
-        return self.a / self.bb
+        return self.a / self.b
 
     def toFloat(x):
         return float(x)
