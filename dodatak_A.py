@@ -1,6 +1,4 @@
 import getpass
-from math import nan
-import bcrypt
 
 class OperationsManager():
 
@@ -10,26 +8,16 @@ class OperationsManager():
 
     def perform_division(self) -> float:
         """Divides a with b. If b is zero, returns NaN."""
-        if self.b == 0:
-            return nan
         return self.a / self.b
 
     def toFloat(x):
-        try:
-            result = float(x)
-            return result
-        except:
-            return nan
+        return float(x)
 
 
 if __name__ == "__main__":
     user = input("Username: ")
     password = getpass.getpass("Password: ")
-    bytePassword = password.encode('utf-8')
-    #salt = bcrypt.gensalt()
-    salt = b'$2b$12$UxzsjL/TQ4BAhiC6U6fyku'
-    hashedPassword = b'$2b$12$UxzsjL/TQ4BAhiC6U6fykuNiV.nV0d0PrpQRe8hDkAopCn1Km7X8e'
-    if user != "root" or bcrypt.hashpw(bytePassword, salt) != hashedPassword:
+    if user != "root" or password != "123":
         print("Wrong username or password!")
         exit(0)
     else:
